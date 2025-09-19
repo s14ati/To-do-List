@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    html,
+    body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      width: 100%;
+      min-height: 100vh;
+      background-image: url(./lapi.jpg);
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-attachment: fixed;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      padding-top: 80px;
+    }
+
+    /* .todo-app */
+    .todo-app {
+      width: 100%;
+      max-width: 540px;
+      background-color: rgb(223, 239, 244);
+      padding: 40px 30px 70px;
+      border-radius: 10px;
+      margin-top: 0;
+      min-height: 140px;
+    }
+
+    .todo-app h2 {
+      font-size: 35px;
+      font-family: "Courier New", Courier, monospace;
+      color: #0842a0;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    .todo-app h2 img {
+      width: 30px;
+      margin-left: 10px;
+      border-radius: 10px;
+    }
+    .row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background-color: #edeef0;
+      border-radius: 30px;
+      padding-left: 20px;
+      margin-bottom: 25px;
+    }
+    input {
+      flex: 1;
+      border: 0;
+      outline: 0;
+      background-color: transparent;
+      padding: 10px;
+      font-weight: 14px;
+    }
+
+    .delete-btn {
+      background-image: url("./bin.png");
+      width: 20px;
+      height: 20px;
+      display: inline-block;
+      background-size: cover;
+      cursor: pointer;
+      margin-left: 10px;
+    }
+
+    button {
+      border: 0;
+      outline: 0;
+      padding: 16px 50px;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+      border-radius: 40px;
+      transition: 0.5s;
+      background-size: 200% auto;
+      box-shadow: 0 0 20px #eee;
+      text-transform: uppercase;
+      text-align: center;
+      display: block;
+      background-image: linear-gradient(
+        to right,
+        #314755 0%,
+        #26a0da 51%,
+        #314755 100%
+      );
+    }
+    /* Hover effect */
+    button:hover {
+      background-position: right center;
+      text-decoration: none;
+    }
+    ul li {
+      list-style: none;
+      font-size: 17px;
+      padding: 12px 8px 12px 50px;
+      user-select: none;
+      cursor: pointer;
+      position: relative;
+    }
+    ul li::before {
+      content: "";
+      position: absolute;
+      height: 28px;
+      width: 28px;
+      border-radius: 50%;
+      background-image: url(../checkbox.jpg);
+      background-size: cover;
+      background-position: center;
+      top: 12px;
+      left: 12px;
+    }
+    ul li.checked {
+      color: #555;
+    }
+    ul li.checked::before {
+      background-image: url(./tick-sign.webp);
+    }
+    ul li span {
+      position: absolute;
+      right: 0;
+      top: 5px;
+      width: 40px;
+      height: 40px;
+      font-size: 22px;
+      color: #555;
+      line-height: 40px;
+      text-align: center;
+      border-radius: 50%;
+    }
+    ul li span:hover {
+      background-color: rgb(100, 96, 96);
+    }
+    .row ::placeholder {
+      font-size: 18px;
+    }
+    .row input {
+      font-size: 18px;
+    }
+  </style>
+  <body>
+    <div class="container">
+      <div class="todo-app">
+        <h2>To-Do List</h2>
+        <div class="row">
+          <input type="text" id="input-box" placeholder="Add your text" />
+          <button onclick="addTask()" class="btn-grad">Add</button>
+        </div>
+        <ul id="list-container">
+          <!-- <li class="checked">Task 1</li>
+                <li>Task 2</li>
+                <li>Task 3</li> -->
+        </ul>
+      </div>
+    </div>
+    <script src="to-do.js"></script>
+  </body>
+</html>
